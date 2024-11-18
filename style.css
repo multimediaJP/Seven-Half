@@ -57,7 +57,7 @@ body{
     border-radius:5px;
     background-color: rgba(0, 0, 0, 0.5);
 }
-#inputForm button{
+.golden{
     color:white;
     text-shadow: 2px 2px 5px rgb(61, 4, 49);
     margin-top:30px;
@@ -78,4 +78,42 @@ body{
 }
 #PlayerInformationPage .hrShort{
     width:150px;
+}
+
+
+/*
+
+--- GAME PAGE ---
+
+*/
+
+#GamePage{
+    display:flex;
+    justify-content: space-between; /* Space out children elements (GameInfo and Cards) */
+    align-items: flex-start; /* Align elements at the top of the page */
+    height: 100%; /* Full height of the page */
+    padding: 20px;
+    flex-wrap: wrap;
+    
+}
+
+#GameInfo{
+    padding:50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+
+    width: 250px; /* Set a fixed width for GameInfo */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional, shadow for GameInfo */
+    margin-right: 20px;
+}
+
+#Cards{
+    margin-right:340px; 
+    display:flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  flex-grow: 1;
+
 }
