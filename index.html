@@ -5,7 +5,7 @@
   <meta charset="utf-8">
 
   <title>Seven & Half</title>
-
+  <link rel="icon" type="image/x-icon" href="/images/icon.webp">
   <link rel="stylesheet" href="style.css">
 
 </head>
@@ -22,7 +22,7 @@
           <input type="text" id="playerName" name="playerName" required>
           <br><br>
           <label for="initialMoney">Money Bet:</label>
-          <input type="number" id="initialMoney" name="initialMoney" required min="0">
+          <input id="initialMoney" name="initialMoney" required min="0">
           <br><br>
           <button id="StartGame" class="golden" type="submit">START GAME</button>
         </form>
@@ -31,26 +31,29 @@
 
 
     <div id="GamePage">
+
       <div id="GameInfo">
         <h2 id="GamePlayerName"></h2>
-        <p>Total money:  <span id="totalMoney"></span></p>
         <hr>
-        <button>New Round</button>
-        <button>End Game</button>
-      </div>
-      <div id = "Cards">
-        <div id="PlayerCards">
-          <h2>Your Cards:</h2>
-
+        <p>Total money:  <span id="moneyInfo"></span></p>
+        <p>Your bet:  <span id="betInfo"></span></p>
+        <div id="gameButtons">
+          <button id="endGame">END GAME</button>
+          <button id="newRound">NEW ROUND</button>
         </div>
+        </div>
+
+      <div id = "Cards">
+        <h2>Your Cards:</h2>        
+        <div id="PlayerCards">
+          
+        </div>
+        <h2>Dealer Cards:</h2>
         <div id="DealerCards">
-          <h2>Dealer Cards:</h2>
 
         </div>
       </div>
     </div>
-
-
 
   <script src="script.js"></script>
 </body>

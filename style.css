@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
 
 html, body {
-    height: 100%;  /* Ensure the html and body take full viewport height */
-    margin: 0;     /* Remove default margins */
+    height: 100%;
+    margin: 0;
     overflow:hidden;
 }
 
@@ -14,8 +15,6 @@ body{
     background-position: center;
     color:white;
 }
-
-
 
 #title{
     margin-top:75px;
@@ -55,6 +54,8 @@ body{
     font-size:15px;
     text-align:center;
     border-radius:5px;
+    border-color: rgb(32, 32, 32,0.8);
+    border-width: 4px;
     background-color: rgba(0, 0, 0, 0.5);
 }
 .golden{
@@ -70,11 +71,18 @@ body{
     radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
     border-color: transparent;
     font-family:"PT Serif", serif;
+    transition: transform 0.3s ease, text-shadow 0.3s ease, box-shadow 0.3s ease;
+}
+
+.golden:hover {
+    transform: scale(1.1);
+    text-shadow: 0px 0px 10px rgba(255, 223, 0, 0.7), 0px 0px 20px rgba(255, 223, 0, 0.5), 0px 0px 30px rgba(255, 223, 0, 0.3);
+    box-shadow: 0 0 20px rgba(255, 223, 0, 0.5);
 }
 
 #PlayerInformationPage hr{
     width:300px;
-    border: 1px solid rgba(52, 6, 66, 0.368);
+    border: 1px solid rgba(66, 6, 6, 0.368);
 }
 #PlayerInformationPage .hrShort{
     width:150px;
@@ -89,9 +97,9 @@ body{
 
 #GamePage{
     display:flex;
-    justify-content: space-between; /* Space out children elements (GameInfo and Cards) */
-    align-items: flex-start; /* Align elements at the top of the page */
-    height: 100%; /* Full height of the page */
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
     padding: 20px;
     flex-wrap: wrap;
     
@@ -99,21 +107,78 @@ body{
 
 #GameInfo{
     padding:50px;
-    background-color: rgba(0, 0, 0, 0.5);
+    padding-bottom: 40px;
+    background: radial-gradient(circle at 100% 0%, rgb(69, 86, 102,0) 0%, rgb(19, 32, 25) 90%);
     border-radius: 15px;
 
-    width: 250px; /* Set a fixed width for GameInfo */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional, shadow for GameInfo */
+    width: 250px;
+    box-shadow: -30px 30px 50px rgba(0, 0, 0, 0.5);
     margin-right: 20px;
 }
+#gameButtons{
+    margin-top:20px;
+    display:flex;
+    justify-content: center;
+    gap:25px;
+}
+#gameButtons button{ 
+    margin-top:15px;
+    padding:10px;
+    font-family: "Rowdies", sans-serif;
+    font-size: 15px;
+    border-radius:15px;
+    transition: transform 0.2s ease;
+}
+#gameButtons button:hover{
+    transform: scale(1.1);
+    border-color:gold;
+    background-color:rgb(255, 242, 170);
+}
+
 
 #Cards{
-    margin-right:340px; 
+    margin-right:15vw; 
     display:flex;
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  flex-grow: 1;
+    flex-grow: 1;
+    
+}
+#Cards h2{
+    margin-bottom:30px;
+    margin-top:0px;
+    text-shadow:-3px 3px 10px rgba(0, 0, 0, 0.5)
+}
 
+#PlayerCards, #DealerCards{
+    
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.cardimg{
+    width:110px;
+    height:auto;
+    margin-bottom:50px;
+    box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.5);
+    animation: comeFromBelow 0.4s ease-in-out;
+    transition: transform 0.15s ease-in-out;
+}
+
+.cardimg:hover{
+    transform: scale(1.1)!important;
+}
+
+@keyframes comeFromBelow {
+    0% {
+        transform: translateY(800px); 
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
